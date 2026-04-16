@@ -21,6 +21,6 @@ done
 if [ $mark == "True" ];then
 for i in ${gid[@]}
 do
-echo "Group $i does not exist"
+echo "Amit: group $i does not exist"
 done
 fi
