@@ -1,11 +1,11 @@
 #!/bin/bash
-
+set -x
 flag1=$(systemctl is-active systemd-journal-upload.service)
-if [ "$flag1" = "active" ];then
+if [ "$flag1" != "active" ];then
 systemctl start systemd-journal-upload.service
-flag2=$(systemctl is-active systemd-journal-upload.service)
-elif [ "$flag2" = "active" ];then
-
+flag1=$(systemctl is-active systemd-journal-upload.service)
+if [ "$flag1" != "active" ];then
+echo $flag1
 mkdir -p /var/log/journal/remote && chown systemd-journal-remote /var/log/journal/remote
 
 systemctl enable systemd-journal-remote.socket
@@ -33,4 +33,5 @@ URL=http://localhost:19532
 EOF
 
 systemctl enable --now systemd-journal-upload.service
+fi
 fi
