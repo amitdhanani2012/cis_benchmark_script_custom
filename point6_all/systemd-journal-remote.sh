@@ -1,8 +1,12 @@
 #!/bin/bash
-set -x
+#set -x
 flag1=$(systemctl is-active systemd-journal-upload.service)
 if [ "$flag1" != "active" ];then
 systemctl start systemd-journal-upload.service
+else
+echo "systemd-journal-upload is already active"
+exit 0
+fi
 flag1=$(systemctl is-active systemd-journal-upload.service)
 if [ "$flag1" != "active" ];then
 echo $flag1
@@ -33,5 +37,6 @@ URL=http://localhost:19532
 EOF
 
 systemctl enable --now systemd-journal-upload.service
-fi
+echo "done with sysetemd-journal-upload"
+
 fi

@@ -2,7 +2,7 @@
 
 home1_path=$(awk -F':' '{ if ($3>999 && $7 !~ /nologin/) print $1"-"$4"-"$6}' /etc/passwd)
 
-echo $home1_path
+#echo $home1_path
 
 
 for home_path in `echo $home1_path`
@@ -20,3 +20,4 @@ if [ -n "$user" -a -n "group1" ];then
 chown $user.$group $path1
 fi
 done
+echo "done with home directory permssion"
