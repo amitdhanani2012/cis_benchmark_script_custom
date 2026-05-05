@@ -1,6 +1,6 @@
 #!/bin/bash
 
-(grep -q "^PermitRootLogin" /etc/ssh/sshd_config && sed -i 's/\(^PermitRootLogin\)\(.*\)/\1 no/' /etc/ssh/sshd_config) || echo "PermitRootLogin no" >>/etc/ssh/sshd_config
+(grep -q "^PermitRootLogin" /etc/ssh/sshd_config && sed -i 's/^PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config) || echo "PermitRootLogin no" >>/etc/ssh/sshd_config
 systemctl restart sshd
 
 if sshd -T |grep -i PermitRootLogin |grep -i no;then
