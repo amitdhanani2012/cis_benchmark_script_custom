@@ -4,7 +4,7 @@
 systemctl restart sshd
 
 if sshd -T |grep -i PermitRootLogin |grep -i no;then
-echo "Deny Root Login in ssh security implemented"
+echo -e "Deny Root Login in ssh security implemented \e[32m[pass]\e[0m"
 else
-echo "Deny Root Login not done"
+echo -e "Deny Root Login not done \033[31m[fail]\033[0m"
 fi

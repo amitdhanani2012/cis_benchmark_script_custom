@@ -1,0 +1,16 @@
+bash banner_net_sshd.sh
+bash cipher_line_ssh.sh
+bash kexalgorithms.sh
+bash login.def.sh
+bash login_grace_time.sh
+bash maxauthtry.sh
+bash maxstratupssh.sh
+bash non-interactive-shell.sh
+bash  nullpassword_block.sh
+bash root_login_denied_ssh.sh
+bash ssh-mac.sh
+bash timeout.sh
+bash umask_profile.d2.sh
+bash umask_profile.d.sh
+bash umask_profile.d2.sh
+bash update-crypto-policy.sh
