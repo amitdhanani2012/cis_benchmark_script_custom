@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo -e "\e[32mFirewalld setup started\e[0m"
 firewall-cmd --zone=public --permanent --add-service=http
 firewall-cmd --zone=public --permanent --add-service=ssh
 firewall-cmd --zone=public --permanent --add-service=https
