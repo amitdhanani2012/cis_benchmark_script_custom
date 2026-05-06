@@ -1,6 +1,6 @@
 #!/bin/bash
 #set -x
-
+echo -e "\e[32m Non Interactive shell started\e[0m"
 #user=$(awk -F':' '{ if ($3<=999 && $7 !~ /nologin/ && $4 != 0 ) print $0 }' /etc/passwd)
 user1=$(awk -F':' '{ if ($3<=999 && $7 !~ /nologin/ && $3 != 0 && $7 == "/bin/bash" ) print $1 }' /etc/passwd)
 if [ -n "$user1" ];then
