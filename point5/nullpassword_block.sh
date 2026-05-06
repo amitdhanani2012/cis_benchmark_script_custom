@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo -e "\e[32mNull password not allowed started\e[0m"
 authselect enable-feature without-nullok >/dev/null
 authselect apply-changes 
 

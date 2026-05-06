@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo -e "\e[32mWeak Cipher removal started\e[0m"
 if grep -q "^Ciphers" /etc/ssh/sshd_config;then
 
 sed -i '/^Ciphers/s/Ciphers.*/Ciphers \-3des\-cbc,aes128\-cbc,aes192\-cbc,aes256\-cbc,chacha20\-poly1305@openssh\.com/' /etc/ssh/sshd_config

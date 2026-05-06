@@ -1,4 +1,6 @@
 #!/bin/bash
+
+echo -e "\e[32mWeak cipher and mac removal started\e[0m"
 bash no-sha1.sh
 bash no-weakmac.sh
 bash no-cbc.sh

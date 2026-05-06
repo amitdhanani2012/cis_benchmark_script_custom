@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo -e "\e[32mmax auth try started\e[0m"
 (grep -q "^MaxAuthTries" /etc/ssh/sshd_config && sed -i 's/^MaxAuthTries.*/MaxAuthTries 4/' /etc/ssh/sshd_config) || echo "MaxAuthTries 4" >>/etc/ssh/sshd_config
 systemctl reset-failed sshd
 systemctl restart sshd

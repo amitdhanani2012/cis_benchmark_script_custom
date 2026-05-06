@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo -e "\e[32mPermit Root Login denied started\e[0m"
 (grep -q "^PermitRootLogin" /etc/ssh/sshd_config && sed -i 's/^PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config) || echo "PermitRootLogin no" >>/etc/ssh/sshd_config
 systemctl restart sshd
 

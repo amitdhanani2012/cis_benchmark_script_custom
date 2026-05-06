@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo -e "\e[32mlogin grace started\e[0m"
 (grep -q "^LoginGraceTime" /etc/ssh/sshd_config && sed -i 's/^LoginGraceTime.*/LoginGraceTime 60/' /etc/ssh/sshd_config) || echo "LoginGraceTime 60">>/etc/ssh/sshd_config
 systemctl reset-failed sshd
 systemctl restart sshd

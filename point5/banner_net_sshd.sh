@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo -e "\e[32m Banner ssh started \e[0m"
 if ! grep -q "^Banner \/etc\/issue\.net" /etc/ssh/sshd_config && ! grep -q "^Banner" /etc/ssh/sshd_config;then
 echo "Banner /etc/issue.net" >> /etc/ssh/sshd_config
 systemctl reset-failed sshd

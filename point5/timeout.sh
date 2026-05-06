@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo -e "\e[32mTimeout setting started\e[0m"
 if  grep -q TMOUT /etc/profile || grep -q TMOUT /etc/profile.d/* ;then
 echo -e "TMOUT already set \e[32m[pass]\e[0m"
 else
